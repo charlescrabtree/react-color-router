@@ -10,12 +10,12 @@ export default function NavBar() {
       Dark Slate Gray
       </NavLink>
 
-      <NavLink to="/rgb/172/189/134" className={navlink}>
+      <NavLink to="/rgb/172/189/134" className="navlink">
       Sage
       </NavLink>
 
-      <NavLink to="/rgb/255/160/111" className={navlink}>
-
+      <NavLink to="/rgb/255/160/111" className="navlink">
+      Caramel
       </NavLink>
     </div>
   );
