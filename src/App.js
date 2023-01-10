@@ -1,5 +1,5 @@
 import './App.css';
-import Layout from './Layout';
+import Layout from './Layout.jsx';
 import { BrowserRouter as Router, Navigate, Route, Routes, useParams } from 'react-router-dom';
 // import NavBar from './Components/NavBar/NavBar';
 // import RGB from './Components/RGB/RGB';
