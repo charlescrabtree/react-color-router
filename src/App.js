@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Layout from './Layout.jsx';
+import { BrowserRouter as Router, Navigate, Route, Routes, useParams } from 'react-router-dom';
+// import NavBar from './Components/NavBar/NavBar';
+// import RGB from './Components/RGB/RGB';
+// import NotFound from './Components/NotFound/NotFound';
 
-function App() {
+
+function RGB() {
+  const { r, g, b } = useParams();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="fill" style={{ background: `rgb(${r}, ${g}, ${b})` }}>
+      <p>{`rgb(${r},${g},${b})`}</p>
     </div>
   );
+}
+
+function App() {
+  return <>
+    <Router>
+      <Layout />
+      <Routes>
+        <Route path="/" to="/rgb/40/4/75" />
+        <Route path="/rgb/:r/:g/:b" element={<RGB />} />
+        <Route path="*" element={ <h1>Route Not Found!</h1> } />
+
+      </Routes>
+    </Router>
+  </>;
+
 }
 
 export default App;
